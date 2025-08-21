@@ -1,0 +1,50 @@
+:root {
+  --pink: #ff69b4;
+  --sea-blue: #20b2aa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+.pink, .sea-blue {
+  display: inline-block;
+  /* apply the same float animation but offset their timing */
+  animation: float 3s ease-in-out infinite;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.sea-blue {
+  color: var(--sea-blue);
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
